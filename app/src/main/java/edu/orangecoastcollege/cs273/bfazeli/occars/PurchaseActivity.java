@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
+import java.text.NumberFormat;
+
 public class PurchaseActivity extends AppCompatActivity {
 
     private EditText carPriceEditText;
@@ -20,6 +22,8 @@ public class PurchaseActivity extends AppCompatActivity {
 
     private String monthlyPaymentText;
     private String loanSummaryText;
+
+    private static NumberFormat currency = NumberFormat.getCurrencyInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +81,13 @@ public class PurchaseActivity extends AppCompatActivity {
 
         loanSummaryText = getString(R.string.report_line2) + currentCar.getPrice()
                 + getString(R.string.report_line3) + currentCar.getDownPayment()
-                + getString(R.string.report_line4) + currentCar.calculateTaxAmount()
-                + getString(R.string.report_line5) + currentCar.calculateTotalCost()
-                + getString(R.string.report_line6) + currentCar.calculateBorrowedAmount()
-                + getString(R.string.report_line7) + currentCar.calculateInterestAmount()
-                + getString(R.string.report_line8) + currentCar.getLoanTerm() + getString(R.string.years);
-
-
+                + getString(R.string.report_line5) + currentCar.calculateTaxAmount()
+                + getString(R.string.report_line6) + currentCar.calculateTotalCost()
+                + getString(R.string.report_line7) + currentCar.calculateBorrowedAmount()
+                + getString(R.string.report_line8) + currentCar.calculateInterestAmount() + "\n"
+                + getString(R.string.report_line4) + currentCar.getLoanTerm() + getString(R.string.years) + "\n"
+                + getString(R.string.report_line9)
+                + getString(R.string.report_line10)
+                + getString(R.string.report_line11);
     }
 }
