@@ -37,7 +37,7 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="2dp"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/loanReportTextView"
@@ -47,7 +47,7 @@
         android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/monthlyPaymentTextView"
         android:layout_marginTop="2dp"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:typeface="monospace"
         android:paddingLeft="10dp"
         android:paddingRight="10dp" />

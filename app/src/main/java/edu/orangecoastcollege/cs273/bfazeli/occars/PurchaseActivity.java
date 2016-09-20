@@ -81,15 +81,15 @@ public class PurchaseActivity extends Activity {
     }
 
     private void constructLoanSummaryText() {
-        monthlyPaymentText = getString(R.string.report_line1) + currentCar.calculateMonthlyPayment();
+        monthlyPaymentText = getString(R.string.report_line1) + String.format("%.02f", currentCar.calculateMonthlyPayment());
 
-        loanSummaryText = getString(R.string.report_line2) + currentCar.getPrice()
-                + getString(R.string.report_line3) + currentCar.getDownPayment()
-                + getString(R.string.report_line5) + currentCar.calculateTaxAmount()
-                + getString(R.string.report_line6) + currentCar.calculateTotalCost()
-                + getString(R.string.report_line7) + currentCar.calculateBorrowedAmount()
-                + getString(R.string.report_line8) + currentCar.calculateInterestAmount() + "\n"
-                + getString(R.string.report_line4) + currentCar.getLoanTerm() + getString(R.string.years) + "\n"
+        loanSummaryText = getString(R.string.report_line2) + String.format("%10.02f", currentCar.getPrice())
+                + getString(R.string.report_line3) + String.format("%10.02f", currentCar.getDownPayment())
+                + getString(R.string.report_line5) + String.format("%18.02f", currentCar.calculateTaxAmount())
+                + getString(R.string.report_line6) + String.format("%18.02f", currentCar.calculateTotalCost())
+                + getString(R.string.report_line7) + String.format("%12.02f", currentCar.calculateBorrowedAmount())
+                + getString(R.string.report_line8) + String.format("%12.02f", currentCar.calculateInterestAmount()) + "\n"
+                + getString(R.string.report_line4) + " " + currentCar.getLoanTerm() + " " + getString(R.string.years) + "\n"
                 + getString(R.string.report_line9)
                 + getString(R.string.report_line10)
                 + getString(R.string.report_line11);
