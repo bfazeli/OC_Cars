@@ -1,16 +1,18 @@
 package edu.orangecoastcollege.cs273.bfazeli.occars;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
 import java.text.NumberFormat;
 
-public class PurchaseActivity extends AppCompatActivity {
+public class PurchaseActivity extends Activity {
 
     private EditText carPriceEditText;
     private EditText downPaymentEditText;
@@ -42,7 +44,7 @@ public class PurchaseActivity extends AppCompatActivity {
 
     // When associating the button with an event, set the onClick property
     // Define the method as public void (with one parameter View view)
-    public void activateLoanReport(View view) {
+    public void activateLoanReport (View view) {
         double price, downPayment;
 
         try {
@@ -54,6 +56,8 @@ public class PurchaseActivity extends AppCompatActivity {
             price = 0.0;
             downPayment = 0.0;
         }
+
+        //Log.i(String.valueOf(downPayment), "down payment");
 
         int loanTerm;
 
